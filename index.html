@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0M_P 5th Album "Brand New World"</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* * Material 3 Expressive Inspired Dark Theme 
+         * Using a blue-centric color palette.
+         */
+        :root {
+            --color-primary: #75D1FF; /* A light, expressive blue */
+            --color-on-primary: #003548;
+            --color-primary-container: #004D67;
+            --color-on-primary-container: #C2E8FF;
+            --color-secondary: #B3C8D5;
+            --color-on-secondary: #1E333D;
+            --color-secondary-container: #344A54;
+            --color-on-secondary-container: #CFE4F1;
+            --color-surface-dim: #101416; /* Darkest background */
+            --color-surface: #101416;
+            --color-surface-bright: #363A3D;
+            --color-surface-container-lowest: #0B0F11;
+            --color-surface-container-low: #181C1E;
+            --color-surface-container: #1C2022; /* Main card background */
+            --color-surface-container-high: #272B2D;
+            --color-surface-container-highest: #313538; /* Elevated surfaces */
+            --color-on-surface: #E2E2E5; /* Main text color */
+            --color-on-surface-variant: #C0C7CD; /* Subdued text color */
+            --color-outline: #8A9297;
+            --color-outline-variant: #40484D;
+        }
+
+        body {
+            background-color: var(--color-surface-dim);
+            color: var(--color-on-surface);
+            font-family: 'Inter', 'Noto Sans SC', 'Noto Sans JP', sans-serif;
+        }
+
+        /* Custom component styles */
+        .m3-card {
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            transition: all 0.3s ease;
+        }
+        .m3-card:hover {
+            background-color: var(--color-surface-container-high);
+            border-color: var(--color-outline);
+        }
+        .m3-button-filled {
+            background-color: var(--color-primary);
+            color: var(--color-on-primary);
+            transition: all 0.2s ease-in-out;
+        }
+        .m3-button-filled:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 4px 15px -5px rgba(117, 209, 255, 0.4);
+        }
+        .m3-button-tonal {
+            background-color: var(--color-secondary-container);
+            color: var(--color-on-secondary-container);
+            transition: all 0.2s ease-in-out;
+        }
+        .m3-button-tonal:hover {
+            filter: brightness(1.1);
+        }
+        .m3-button-outlined {
+            border-color: var(--color-outline);
+            color: var(--color-primary);
+            transition: all 0.2s ease-in-out;
+        }
+        .m3-button-outlined:hover {
+            background-color: rgba(117, 209, 255, 0.08);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            color: var(--color-primary);
+            text-shadow: 0 0 15px rgba(117, 209, 255, 0.3);
+        }
+
+        /* Hero Section Styles */
+        .hero-bg {
+            background-image: url('https://links.0m-p.space/BNW-KV.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-logo {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
+        }
+
+        /* Language switcher active state */
+        .lang-btn.active {
+            background-color: var(--color-primary);
+            color: var(--color-on-primary);
+            font-weight: bold;
+        }
+
+        /* Lightbox for store bonuses */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 2rem;
+            cursor: pointer;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="flex space-x-2 rounded-full bg-gray-800/50 backdrop-blur-sm p-1 border border-gray-700">
+            <button id="lang-en" class="lang-btn px-4 py-1 rounded-full text-sm transition-colors duration-300">EN</button>
+            <button id="lang-ja" class="lang-btn px-4 py-1 rounded-full text-sm transition-colors duration-300">JP</button>
+            <button id="lang-zh" class="lang-btn px-4 py-1 rounded-full text-sm transition-colors duration-300">CN</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="w-full">
+
+        <!-- 1. Hero Section -->
+        <header class="h-screen min-h-[600px] flex items-center justify-center hero-bg">
+            <div class="hero-content text-center flex flex-col items-center">
+                <img src="https://links.0m-p.space/BNW-LOGO.svg" alt="0M_P 5th Album Brand New World Logo" class="hero-logo w-11/12 max-w-screen-2xl mb-4"
+                     onerror="this.onerror=null; this.src='https://placehold.co/1200x400/101416/75D1FF?text=Brand+New+World+Logo';">
+                <p class="text-2xl md:text-3xl text-white font-bold tracking-widest" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">2025.9.10 Release</p>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24">
+
+            <!-- 2. Editions Section -->
+            <section id="editions">
+                <h2 class="section-title text-center mb-12" data-translate-key="editions_title">Editions</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Standard Edition -->
+                    <div class="m3-card rounded-3xl p-6 flex flex-col text-center items-center">
+                        <h3 class="text-2xl font-bold text-white mb-2" data-translate-key="std_name">Standard Edition</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">UM0M-A010</p>
+                        <img src="https://links.0m-p.space/BNW-Cover.png" alt="Standard Edition Cover" class="rounded-2xl w-full h-auto mb-6 shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/500x500/1C2022/E2E2E5?text=Standard+Cover';">
+                        <p class="text-lg font-semibold text-on-surface mb-2" data-translate-key="std_spec">1 DISC</p>
+                        <p class="text-xl font-bold text-primary price-tag" data-price-jp="2399円 (in Tax)" data-price-en="19.9 USD (in Tax)" data-price-zh="99 RMB">2399円 (in Tax)</p>
+                    </div>
+                    <!-- Limited Edition -->
+                    <div class="m3-card rounded-3xl p-6 flex flex-col text-center items-center">
+                        <h3 class="text-2xl font-bold text-white mb-2" data-translate-key="ltd_name">Limited Edition</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">UM0M-A011</p>
+                        <img src="https://links.0m-p.space/BNW-LCover.png" alt="Limited Edition Cover" class="rounded-2xl w-full h-auto mb-6 shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/500x500/1C2022/E2E2E5?text=Limited+Cover';">
+                        <p class="text-lg font-semibold text-on-surface mb-2" data-translate-key="ltd_spec">2 DISC</p>
+                        <p class="text-xl font-bold text-primary price-tag" data-price-jp="3939円 (in Tax)" data-price-en="29.9 USD (in Tax)" data-price-zh="199 RMB">3939円 (in Tax)</p>
+                    </div>
+                    <!-- Memories Edition -->
+                    <div class="m3-card rounded-3xl p-6 flex flex-col text-center items-center md:col-span-2 lg:col-span-1">
+                        <h3 class="text-2xl font-bold text-white mb-2" data-translate-key="mem_name">Memories Edition</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">UM0M-A012</p>
+                        <img src="https://links.0m-p.space/BNW-MCover.png" alt="Memories Edition Cover" class="rounded-2xl w-full h-auto mb-6 shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/500x500/1C2022/E2E2E5?text=Memories+Cover';">
+                        <p class="text-lg font-semibold text-on-surface" data-translate-key="mem_spec">3 DISC + ART BOOK + SPECIAL GOODS</p>
+                        <p class="text-on-surface-variant text-sm mt-2 mb-4 min-h-[4rem]" data-translate-key="mem_desc">Features a special cover illustrated by White, and includes interviews about 0M_P's musical memories and life experiences since his major debut in 2022.</p>
+                        <p class="text-xl font-bold text-primary price-tag" data-price-jp="6999円 (in Tax)" data-price-en="49.9 USD (in Tax)" data-price-zh="339 RMB">6999円 (in Tax)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Track List Section -->
+            <section id="tracklist">
+                <h2 class="section-title text-center mb-12" data-translate-key="tracklist_title">Track List</h2>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- DISC 1 -->
+                    <div class="m3-card rounded-3xl p-6 lg:col-span-1">
+                        <h3 class="text-xl font-bold text-primary border-b-2 border-primary/50 pb-2 mb-4">DISC.1 Brand New World</h3>
+                        <ol class="space-y-2 text-on-surface-variant list-decimal list-inside">
+                            <li>You Need - Reloaded</li>
+                            <li>ナナナン</li>
+                            <li>Follow Me</li>
+                            <li>Pros</li>
+                            <li>嘘</li>
+                            <li>Let's Jump Up!</li>
+                            <li>Reach Here</li>
+                            <li>Drama of Play</li>
+                            <li>花の春</li>
+                            <li>Times</li>
+                            <li>Candying</li>
+                            <li>natural love</li>
+                            <li>Just Towards Tokyo</li>
+                        </ol>
+                    </div>
+                    <!-- DISC 2 -->
+                    <div class="m3-card rounded-3xl p-6 lg:col-span-1">
+                        <h3 class="text-xl font-bold text-primary border-b-2 border-primary/50 pb-2 mb-4">DISC.2 Remixes & Covers</h3>
+                        <p class="text-xs text-on-surface-variant mb-4" data-translate-key="disc2_info">(Included in Limited & Memories Edition Only)</p>
+                        <ol class="space-y-2 text-on-surface-variant list-decimal list-inside">
+                            <li>No Title Series Mega Collection by TeddyLoid</li>
+                            <li>ナナナン (DECO*27&tepe Extreme Level Remix)</li>
+                            <li>Candying (TAKU INOUE Sweet Remix)</li>
+                            <li>嘘 x 余命2:30 Mixed by ピノキオピー</li>
+                            <li>Summering (0M_P Cover)</li>
+                            <li>Sing Again (じん feat.初音ミク Cover)</li>
+                            <li>natural love (another story)</li>
+                            <li>natural love (Yuse Totto Cover)</li>
+                        </ol>
+                    </div>
+                    <!-- DISC 3 -->
+                    <div class="m3-card rounded-3xl p-6 lg:col-span-1">
+                        <h3 class="text-xl font-bold text-primary border-b-2 border-primary/50 pb-2 mb-4">DISC.3 Blu-ray</h3>
+                        <p class="text-xs text-on-surface-variant mb-2" data-translate-key="disc3_info">(Included in Memories Edition Only)</p>
+                        <p class="text-xs text-primary/80 mb-4" data-translate-key="disc3_hires">(with Hi-Res Lossless Audio)</p>
+                        <ol class="space-y-3 text-on-surface-variant list-decimal list-inside text-sm">
+                            <li data-translate-key="disc3_track1">0M_P's Memories - Talking with White, Yuse Totto & OrOrOr... (incl. Chinese (S/T), English & Japanese Subtitle)</li>
+                            <li>HATSUNE MIKU SPECIAL 3DCG LIVE with /World/Dream/ ~You Need - Reloaded, natural love, Sing Again&Reach Here~</li>
+                            <li>0M_P 1st Live "Rookie" 2022.2.22 @Zepp DiverCity(TOKYO) Full Live Video / About 1 hour</li>
+                            <li>natural love Music Video</li>
+                            <li>No Title Series Mega Collection by TeddyLoid Lyrics Video</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4 & 5. Videos & Links Section -->
+            <section id="media-links">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Teaser & Crossfade -->
+                    <div class="m3-card rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6">
+                        <img src="https://links.0m-p.space/BNW-XFDCover.png" alt="Crossfade Video Cover" class="w-40 h-40 object-cover rounded-2xl flex-shrink-0"
+                             onerror="this.onerror=null; this.src='https://placehold.co/160x160/1C2022/E2E2E5?text=XFD';">
+                        <div class="flex-grow w-full text-center sm:text-left">
+                            <h3 class="text-2xl font-bold text-white mb-4" data-translate-key="videos_title">Teaser & CrossFade Video</h3>
+                            <div class="flex flex-wrap justify-center sm:justify-start gap-3">
+                                <a href="https://0m-p.lnk.to/BNW-TV" target="_blank" class="m3-button-tonal text-center px-5 py-2 rounded-full font-semibold text-sm" data-translate-key="teaser_btn">Teaser</a>
+                                <a href="https://0m-p.lnk.to/BNW-XFDV" target="_blank" class="m3-button-tonal text-center px-5 py-2 rounded-full font-semibold text-sm" data-translate-key="crossfade_btn">Crossfade</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Buying & Streaming -->
+                    <div class="m3-card rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6">
+                        <img src="https://links.0m-p.space/BNW-LCover.png" alt="Album Cover for Links" class="w-40 h-40 object-cover rounded-2xl flex-shrink-0"
+                             onerror="this.onerror=null; this.src='https://placehold.co/160x160/1C2022/E2E2E5?text=Album';">
+                        <div class="flex-grow w-full text-center sm:text-left">
+                            <h3 class="text-2xl font-bold text-white mb-4" data-translate-key="links_title">Buying, Streaming / DL</h3>
+                            <div class="flex flex-wrap justify-center sm:justify-start gap-3">
+                                <a href="https://0m-p.lnk.to/BNW" target="_blank" class="m3-button-filled text-center px-5 py-2 rounded-full font-semibold text-sm" data-translate-key="stream_btn">Stream / DL</a>
+                                <a href="https://0m-p.lnk.to/BNW_Buying" target="_blank" class="m3-button-outlined text-center border-2 px-5 py-2 rounded-full font-semibold text-sm" data-translate-key="buy_btn">Buy Album</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Store Bonuses Section -->
+            <section id="bonuses">
+                <h2 class="section-title text-center mb-12" data-translate-key="bonuses_title">Store Bonuses</h2>
+                <div class="space-y-4">
+                    <!-- Bonus Item Template -->
+                    <div class="m3-card rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 bonus-item" data-store-key="store_official">
+                        <img src="https://links.0m-p.space/JTT-SPCOVER.png" alt="0M_P Official Store Bonus" class="w-20 h-20 rounded-lg object-cover cursor-pointer bonus-image"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/1C2022/E2E2E5?text=Bonus';">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h4 class="font-bold text-white" data-translate-key="store_official_name">0M_P Official Store</h4>
+                            <p class="text-sm text-on-surface-variant" data-translate-key="store_official_bonus">Just Towards Tokyo (Arranged by yuxuki waga) CD</p>
+                        </div>
+                        <a href="https://0m-p.official.ec/" target="_blank" class="m3-button-outlined px-5 py-2 rounded-full text-sm font-semibold flex-shrink-0" data-translate-key="visit_store">Visit Store</a>
+                    </div>
+                    <div class="m3-card rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 bonus-item" data-store-key="store_universal">
+                        <img src="https://links.0m-p.space/SoF-SPCOVER.png" alt="UNIVERSAL MUSIC STORE Bonus" class="w-20 h-20 rounded-lg object-cover cursor-pointer bonus-image"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/1C2022/E2E2E5?text=Bonus';">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h4 class="font-bold text-white" data-translate-key="store_universal_name">UNIVERSAL MUSIC STORE</h4>
+                            <p class="text-sm text-on-surface-variant" data-translate-key="store_universal_bonus">花の春 (ryo Orchestral Arrangement) CD</p>
+                        </div>
+                        <a href="https://store.universal-music.co.jp/search?q=0M_P" target="_blank" class="m3-button-outlined px-5 py-2 rounded-full text-sm font-semibold flex-shrink-0" data-translate-key="visit_store">Visit Store</a>
+                    </div>
+                    <div class="m3-card rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 bonus-item" data-store-key="store_animate">
+                        <img src="https://links.0m-p.space/BJ.png" alt="animate Online Shop Bonus" class="w-20 h-20 rounded-lg object-cover cursor-pointer bonus-image"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/1C2022/E2E2E5?text=Bonus';">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h4 class="font-bold text-white" data-translate-key="store_animate_name">animate Online Shop</h4>
+                            <p class="text-sm text-on-surface-variant" data-translate-key="store_animate_bonus">Album Cover Can Badge (76mm) (Art by 左)</p>
+                        </div>
+                        <a href="https://www.animate-onlineshop.jp/" target="_blank" class="m3-button-outlined px-5 py-2 rounded-full text-sm font-semibold flex-shrink-0" data-translate-key="visit_store">Visit Store</a>
+                    </div>
+                    <div class="m3-card rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 bonus-item" data-store-key="store_amazon">
+                        <img src="https://links.0m-p.space/RELEASE-POSTER.png" alt="amazon Bonus" class="w-20 h-20 rounded-lg object-cover cursor-pointer bonus-image"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/1C2022/E2E2E5?text=Bonus';">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h4 class="font-bold text-white" data-translate-key="store_amazon_name">amazon</h4>
+                            <p class="text-sm text-on-surface-variant" data-translate-key="store_amazon_bonus">Release Information Poster</p>
+                        </div>
+                        <a href="https://amazon.co.jp" target="_blank" class="m3-button-outlined px-5 py-2 rounded-full text-sm font-semibold flex-shrink-0" data-translate-key="visit_store">Visit Store</a>
+                    </div>
+                    <div class="m3-card rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 bonus-item" data-store-key="store_tmall">
+                        <img src="https://links.0m-p.space/YNR-SPCOVER.png" alt="0M_P Tmall Store Bonus" class="w-20 h-20 rounded-lg object-cover cursor-pointer bonus-image"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/1C2022/E2E2E5?text=Bonus';">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h4 class="font-bold text-white" data-translate-key="store_tmall_name">0M_P Tmall Flagship Store</h4>
+                            <p class="text-sm text-on-surface-variant" data-translate-key="store_tmall_bonus">You Need - Reloaded (ChiliChili Love Love Remix) CD</p>
+                        </div>
+                        <a href="https://www.tmall.com/" target="_blank" class="m3-button-outlined px-5 py-2 rounded-full text-sm font-semibold flex-shrink-0" data-translate-key="visit_store">Visit Store</a>
+                    </div>
+                    <div class="m3-card rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 bonus-item" data-store-key="store_rakuten">
+                        <img src="https://links.0m-p.space/HELLO-BJ.png" alt="Rakuten Bonus" class="w-20 h-20 rounded-lg object-cover cursor-pointer bonus-image"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/1C2022/E2E2E5?text=Bonus';">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h4 class="font-bold text-white" data-translate-key="store_rakuten_name">Rakuten Books</h4>
+                            <p class="text-sm text-on-surface-variant" data-translate-key="store_rakuten_bonus">MV Can Badge (76mm) - 最前線のハロー (Art by White)</p>
+                        </div>
+                        <a href="https://www.rakuten.co.jp/" target="_blank" class="m3-button-outlined px-5 py-2 rounded-full text-sm font-semibold flex-shrink-0" data-translate-key="visit_store">Visit Store</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 7 & 8. About & Other Info -->
+            <section id="about">
+                <div class="flex flex-col gap-12 lg:gap-16">
+                    <!-- About 0M_P -->
+                    <div class="m3-card rounded-3xl p-8">
+                        <h2 class="section-title mb-8" data-translate-key="about_title">About 0M_P</h2>
+                        <div class="flex flex-col sm:flex-row gap-8 items-center">
+                            <img src="https://links.0m-p.space/Avatar.png" alt="0M_P Avatar" class="w-32 h-32 rounded-full flex-shrink-0 object-cover border-4 border-surface-container-highest"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/128x128/1C2022/E2E2E5?text=0M_P';">
+                            <div>
+                                <h3 class="text-xl font-bold text-white" data-translate-key="about_role">Sound Producer / Singer / VOCALOID Producer / Writer</h3>
+                                <p class="mt-4 text-on-surface-variant" data-translate-key="about_bio">Started activities in 2017. VOCALOID songs are mainly sung by Hatsune Miku. Made major debut in 2022 from Polydor Records, a label under Universal Music Japan. Major works include "You Need", "natural love", and "Drama of Play".</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Info -->
+                    <div class="m3-card rounded-3xl p-8">
+                        <h2 class="section-title mb-8" data-translate-key="other_info_title">More Info</h2>
+                        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                            <div>
+                                <h4 class="font-bold text-primary" data-translate-key="other_live">Concert Brands</h4>
+                                <ul class="list-disc list-inside text-sm text-on-surface-variant mt-2 space-y-1">
+                                    <li><a href="https://vlive.0m-p.space" target="_blank" class="hover:text-white">0M_P Virtual Live "On-Site"</a></li>
+                                    <li><a href="https://tour.0m-p.space" target="_blank" class="hover:text-white">0M_P WORLD TOUR</a></li>
+                                    <li><a href="https://tour.0m-p.space/China/2025" target="_blank" class="hover:text-white" data-translate-key="other_cn_tour">0M_P CHINA TOUR 2025 "今天的事情"</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary" data-translate-key="other_albums">Albums</h4>
+                                <ul class="list-disc list-inside text-sm text-on-surface-variant mt-2 space-y-1">
+                                    <li><a href="https://album.0m-p.space/4th" target="_blank" class="hover:text-white">0M_P 4th Album "Two-Side Voices"</a></li>
+                                    <li><a href="https://album.0m-p.space/tour_25" target="_blank" class="hover:text-white" data-translate-key="other_tour_album">0M_P WORLD TOUR 2025 "FLOWERS" OFFICIAL ALBUM 2025.7.16 Release</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 9. Footer -->
+        <footer class="bg-surface-container-lowest text-on-surface-variant text-xs py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+                <div class="flex justify-center items-center gap-4">
+                    <a href="https://www.universal-music.co.jp/" target="_blank">
+                        <img src="https://www.universalmusic.com/wp-content/themes/umgcore2/assets/img/logo.png" alt="Universal Music Group Logo" class="h-8 opacity-70 hover:opacity-100 transition-opacity"
+                             onerror="this.onerror=null; this.src='https://placehold.co/120x32/0B0F11/E2E2E5?text=UMG';">
+                    </a>
+                </div>
+                <div>
+                    <p>Key Visual by 左</p>
+                    <p>Web Designed by AxM Production / Art Director : White / Concept Artist : 0M_P</p>
+                </div>
+                <div>
+                    <p>© 2025 UNIVERSAL MUSIC LLC / 0M_P ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <p>初音ミク © Crypton Future Media, INC. <a href="http://www.piapro.net" target="_blank" class="text-primary hover:underline">www.piapro.net</a></p>
+                    <img src="https://nbcuni-music.com/deco27/assets/footer_credit-_Tgk5uBR.svg" alt="Piapro Logo" class="h-4"
+                         onerror="this.onerror=null; this.src='https://placehold.co/60x16/0B0F11/E2E2E5?text=Piapro';">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Lightbox container -->
+    <div id="lightbox" class="lightbox hidden">
+        <img id="lightbox-img" src="" alt="Bonus item large view">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- TRANSLATION DATA ---
+            const translations = {
+                en: {
+                    editions_title: "Editions",
+                    std_name: "Standard Edition",
+                    std_spec: "1 DISC",
+                    ltd_name: "Limited Edition",
+                    ltd_spec: "2 DISC",
+                    mem_name: "Memories Edition",
+                    mem_spec: "3 DISC + ART BOOK + SPECIAL GOODS",
+                    mem_desc: "Features a special cover illustrated by White, and includes interviews about 0M_P's musical memories and life experiences since his major debut in 2022.",
+                    tracklist_title: "Track List",
+                    disc2_info: "(Included in Limited & Memories Edition Only)",
+                    disc3_info: "(Included in Memories Edition Only)",
+                    disc3_hires: "(with Hi-Res Lossless Audio)",
+                    disc3_track1: "0M_P's Memories - Talking with White, Yuse Totto & OrOrOr... (incl. Chinese (S/T), English & Japanese Subtitle)",
+                    videos_title: "Teaser & CrossFade Video",
+                    teaser_btn: "Teaser",
+                    crossfade_btn: "Crossfade",
+                    links_title: "Buying, Streaming / DL",
+                    stream_btn: "Stream / DL",
+                    buy_btn: "Buy Album",
+                    bonuses_title: "Store Bonuses",
+                    visit_store: "Visit Store",
+                    store_official_name: "0M_P Official Store",
+                    store_official_bonus: "Just Towards Tokyo (Arranged by yuxuki waga) CD",
+                    store_universal_name: "UNIVERSAL MUSIC STORE",
+                    store_universal_bonus: "花の春 (ryo Orchestral Arrangement) CD",
+                    store_animate_name: "animate Online Shop",
+                    store_animate_bonus: "Album Cover Can Badge (76mm) (Art by 左)",
+                    store_amazon_name: "amazon",
+                    store_amazon_bonus: "Release Information Poster",
+                    store_tmall_name: "0M_P Tmall Flagship Store",
+                    store_tmall_bonus: "You Need - Reloaded (ChiliChili Love Love Remix) CD",
+                    store_rakuten_name: "Rakuten Books",
+                    store_rakuten_bonus: "MV Can Badge (76mm) - 最前線のハロー (Art by White)",
+                    about_title: "About 0M_P",
+                    about_role: "Sound Producer / Singer / VOCALOID Producer / Writer",
+                    about_bio: "Started activities in 2017. VOCALOID songs are mainly sung by Hatsune Miku. Made major debut in 2022 from Polydor Records, a label under Universal Music Japan. Major works include \"You Need\", \"natural love\", and \"Drama of Play\".",
+                    other_info_title: "More Info",
+                    other_live: "Concert Brands",
+                    other_cn_tour: "0M_P CHINA TOUR 2025 \"The Matters of Today\"",
+                    other_albums: "Albums",
+                    other_tour_album: "0M_P WORLD TOUR 2025 \"FLOWERS\" OFFICIAL ALBUM 2025.7.16 Release",
+                },
+                ja: {
+                    editions_title: "アルバム形態",
+                    std_name: "通常盤",
+                    std_spec: "1 DISC",
+                    ltd_name: "初回限定盤",
+                    ltd_spec: "2 DISC",
+                    mem_name: "思い出盤",
+                    mem_spec: "3 DISC + ART BOOK + SPECIAL GOODS",
+                    mem_desc: "Whiteによる特別描き下ろしジャケット。2022年のメジャーデビュー以来の0M_Pの音楽の思い出や人生経験についてのインタビューを収録。",
+                    tracklist_title: "収録内容",
+                    disc2_info: "（初回限定盤・思い出盤のみ収録）",
+                    disc3_info: "（思い出盤のみ収録）",
+                    disc3_hires: "（ハイレゾロスレス音源付き）",
+                    disc3_track1: "0M_P's Memories - Talking with White, Yuse Totto & OrOrOr... (中国語(簡/繁)、英語、日本語字幕付き)",
+                    videos_title: "ティザー＆クロスフェード",
+                    teaser_btn: "ティザー",
+                    crossfade_btn: "XFD",
+                    links_title: "購入・配信",
+                    stream_btn: "配信/DL",
+                    buy_btn: "購入",
+                    bonuses_title: "店舗別特典",
+                    visit_store: "ストアへ",
+                    store_official_name: "0M_P Official Store",
+                    store_official_bonus: "Just Towards Tokyo (Arranged by yuxuki waga) CD",
+                    store_universal_name: "UNIVERSAL MUSIC STORE",
+                    store_universal_bonus: "花の春 (ryo Orchestral Arrangement) CD",
+                    store_animate_name: "アニメイト通販",
+                    store_animate_bonus: "アルバムジャケット缶バッジ (76mm) (Art by 左)",
+                    store_amazon_name: "amazon",
+                    store_amazon_bonus: "リリース情報ポスター",
+                    store_tmall_name: "0M_P 天猫公式ストア",
+                    store_tmall_bonus: "You Need - Reloaded (ChiliChili Love Love Remix) CD",
+                    store_rakuten_name: "楽天ブックス",
+                    store_rakuten_bonus: "MV缶バッジ (76mm) - 最前線のハロー (Art by White)",
+                    about_title: "0M_Pについて",
+                    about_role: "サウンドプロデューサー / シンガー / VOCALOID P / 作家",
+                    about_bio: "2017年から活動開始。VOCALOID楽曲は主に初音ミクが歌唱。2022年、ユニバーサルミュージック傘下のPolydor Recordsからメジャーデビュー。代表作に「You Need」「natural love」「Drama of Play」など。",
+                    other_info_title: "関連情報",
+                    other_live: "ライブブランド",
+                    other_cn_tour: "0M_P CHINA TOUR 2025 \"今天的事情\"",
+                    other_albums: "アルバム",
+                    other_tour_album: "0M_P WORLD TOUR 2025 \"FLOWERS\" OFFICIAL ALBUM 2025.7.16 Release",
+                },
+                zh: {
+                    editions_title: "版本信息",
+                    std_name: "通常盘",
+                    std_spec: "1 DISC",
+                    ltd_name: "初回限定盘",
+                    ltd_spec: "2 DISC",
+                    mem_name: "回忆盘",
+                    mem_spec: "3 DISC + ART BOOK + 特别周边",
+                    mem_desc: "拥有White特别描绘的封面，收录了关于0M_P自2022年主流出道以来的音乐回忆与人生经历的访谈。",
+                    tracklist_title: "曲目列表",
+                    disc2_info: "（仅限初回限定盘与回忆盘收录）",
+                    disc3_info: "（仅限回忆盘收录）",
+                    disc3_hires: "（附Hi-Res无损音源）",
+                    disc3_track1: "0M_P's Memories - 与White、Yuse Totto、OrOrOr...的对谈 (含简繁中文、英文、日文字幕)",
+                    videos_title: "宣传&试听视频",
+                    teaser_btn: "宣传PV",
+                    crossfade_btn: "全曲试听",
+                    links_title: "购买、收听/下载",
+                    stream_btn: "收听/下载",
+                    buy_btn: "购买专辑",
+                    bonuses_title: "不同店铺特典",
+                    visit_store: "前往店铺",
+                    store_official_name: "0M_P Official Store",
+                    store_official_bonus: "Just Towards Tokyo (Arranged by yuxuki waga) CD",
+                    store_universal_name: "UNIVERSAL MUSIC STORE",
+                    store_universal_bonus: "花の春 (ryo Orchestral Arrangement) CD",
+                    store_animate_name: "animate Online Shop",
+                    store_animate_bonus: "专辑封面徽章 (76mm) (Art by 左)",
+                    store_amazon_name: "amazon",
+                    store_amazon_bonus: "发售信息海报",
+                    store_tmall_name: "0M_P 天猫旗舰店",
+                    store_tmall_bonus: "You Need - Reloaded (ChiliChili Love Love Remix) CD",
+                    store_rakuten_name: "乐天Books",
+                    store_rakuten_bonus: "MV徽章 (76mm) - 最前線のハロー (Art by White)",
+                    about_title: "关于 0M_P",
+                    about_role: "音乐制作人 / 歌手 / VOCALOID P / 作家",
+                    about_bio: "2017开始活动，VOCALOID歌曲主要由初音未来演唱。2022从环球音乐旗下的Polydor Records主流出道，目前所属日本环球音乐旗下。作品有\"You Need\" \"natural love\" \"Drama of Play\"",
+                    other_info_title: "其他信息",
+                    other_live: "演唱会品牌",
+                    other_cn_tour: "0M_P CHINA TOUR 2025 \"今天的事情\"",
+                    other_albums: "专辑",
+                    other_tour_album: "0M_P WORLD TOUR 2025 \"FLOWERS\" OFFICIAL ALBUM 2025.7.16 Release",
+                }
+            };
+
+            // --- LANGUAGE SWITCHER LOGIC ---
+            const langButtons = {
+                en: document.getElementById('lang-en'),
+                ja: document.getElementById('lang-ja'),
+                zh: document.getElementById('lang-zh')
+            };
+
+            function changeLanguage(lang) {
+                if (!translations[lang]) return;
+
+                // Update text content
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.dataset.translateKey;
+                    if (translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // Update prices
+                document.querySelectorAll('.price-tag').forEach(el => {
+                    const price = el.dataset[`price${lang}`];
+                    if (price) {
+                        el.textContent = price;
+                    }
+                });
+
+                // Update active button style
+                Object.values(langButtons).forEach(btn => btn.classList.remove('active'));
+                if (langButtons[lang]) {
+                    langButtons[lang].classList.add('active');
+                }
+                
+                // Set html lang attribute
+                document.documentElement.lang = lang;
+
+                // Store preference
+                localStorage.setItem('preferredLanguage', lang);
+            }
+
+            langButtons.en.addEventListener('click', () => changeLanguage('en'));
+            langButtons.ja.addEventListener('click', () => changeLanguage('ja'));
+            langButtons.zh.addEventListener('click', () => changeLanguage('zh'));
+
+            // --- INITIAL LANGUAGE SET ---
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.slice(0, 2);
+            let initialLang = 'en'; // Default
+            if (savedLang && translations[savedLang]) {
+                initialLang = savedLang;
+            } else if (browserLang === 'ja') {
+                initialLang = 'ja';
+            } else if (browserLang === 'zh') {
+                initialLang = 'zh';
+            }
+            changeLanguage(initialLang);
+
+            // --- LIGHTBOX LOGIC ---
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            document.querySelectorAll('.bonus-image').forEach(image => {
+                image.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent card click-through if any
+                    lightboxImg.src = image.src;
+                    lightbox.classList.remove('hidden');
+                });
+            });
+
+            lightbox.addEventListener('click', () => {
+                lightbox.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
