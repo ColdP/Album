@@ -1,0 +1,93 @@
+帮我写一个HTML网页，以介绍0M_P 5th Album "Brand New World"，界面设计风格、颜色、字体等要求符合"Brand New World"的主题（深色主题，蓝色色调），采用Material 3 Expressive（https://m3.material.io/blog/building-with-m3-expressive）的设计语言，页面语言为英文、日文、中文，且支持切换
+
+网页分为以下内容：
+1.大标题+主视觉图
+主视觉图https://links.0m-p.space/BNW-KV.png (铺满屏幕顶部，带一点点高斯模糊，半径不要太大）
+LOGO https://links.0m-p.space/BNW-LOGO.svg（图片包含0M_P 5th Album "Brand New World"，不需要重复文字，覆盖在主视觉图上面，且有黑色阴影）
+2025.9.3 Release （size小于LOGO）
+
+2.价格，版本介绍，不同语言下价格显示不同
+通常盘 Standard Edition
+封面：https://links.0m-p.space/BNW-Cover.png
+1 DISC
+規格品番 UM0M-A010
+2399円 （in Tax) /19.9 USD (in Tax) / 99 RMB
+
+初回限定盘 Limited Edition
+封面：https://links.0m-p.space/BNW-LCover.png
+2 DISC
+規格品番 UM0M-A011
+3939円 （in Tax) /29.9 USD (in Tax) / 199 RMB
+
+回忆盘 Memories Edition
+拥有White特别描绘的封面，收录了关于0M_P自2022年主流出道以来的音乐回忆与人生经历的访谈
+封面：https://links.0m-p.space/BNW-MCover.png
+3 DISC + 1 MV ART BOOK + SPECIAL GOODS
+規格品番 UM0M-A012
+6999円 （in Tax) /49.9 USD (in Tax) / 339 RMB
+
+3.Track List
+DISC.1 Brand New World
+01 You Need - Reloaded
+02 ナナナン
+03 Follow Me
+04 Pros
+05 嘘
+06 Let's Jump Up!
+07 Reach Here
+08 Drama of Play
+09 花の春
+10 Times
+11 Candying
+12 natural love
+13 Just Towards Tokyo
+
+DISC.2 Remixes & Covers（仅限初回限定盘与回忆盘收录）
+01 No Title Series Mega Collection by TeddyLoid
+02 ナナナン (DECO*27&tepe Extreme Level Remix)
+03 Candying (TAKU INOUE Sweet Remix)
+04 嘘 x 余命2:30 Mixed by ピノキオピー
+05 Summering (0M_P Cover)
+06 Sing Again (じん feat.初音ミク Cover)
+07 natural love (another story)
+08 natural love (Yuse Totto Cover)
+
+DISC.3 Blu-ray（仅限回忆盘收录, with Hi-Res Lossless Audio）
+01 0M_P's Memories Talking with White, Yuse Totto & OrOrOr...
+02 Special Miku 3DCG Live with /World/Dream/ ~You Need - Reloaded, natural love, Sing Again&Reach Here~
+03 0M_P 1st Live "Rookie" 2022.2.22 @Zepp DiverCity(TOKYO) Full Live Video / About 1 hour
+04 natural love Music Video
+05 No Title Series Mega Collection by TeddyLoid Lyrics Video
+
+4.Teaser Video & CrossFade Video
+https://links.0m-p.space/BNW-XFDCover.png
+Teaser Video: https://0m-p.lnk.to/BNW-TV
+CrossFade Video: https://0m-p.lnk.to/BNW-XFDV
+
+5.Buying, Streaming / Downloading
+封面：https://links.0m-p.space/BNW-LCover.png
+Streaming / DL: https://0m-p.lnk.to/BNW
+Buying: https://0m-p.lnk.to/BNW_Buying
+
+6.0M_P介绍
+Avatar：https://links.0m-p.space/Avatar.png
+Sound Producer / Singer / VOCALOID Producer / Writer
+2017开始活动，VOCALOID歌曲主要由初音未来演唱
+2022从环球音乐旗下的Polydor Records主流出道，目前所属日本环球音乐旗下
+作品有"You Need" "natural love" "Drama of Play"
+
+7.0M_P其他信息
+演唱会品牌
+0M_P Virtual Live "On-Site" (vlive.0m-p.space)
+0M_P WORLD TOUR (tour.0m-p.space)
+0M_P CHINA TOUR 2025 "今天的事情" (tour.0m-p.space/China/2025)
+专辑
+0M_P 4th Album "Two-Side Voices" (album.0m-p.space/4th)
+0M_P WORLD TOUR 2025 "FLOWERS" OFFICIAL ALBUM 2025.7.16 Release (album.0m-p.space/tour_25)
+
+8.版权信息（不要翻译，保持英文）
+https://www.universalmusic.com/wp-content/themes/umgcore2/assets/img/logo.png （UNVIERSAL MUSIC GROUP LOGO，指向https://www.universal-music.co.jp/）
+Key Visual by 左
+Web Designed by AxM Production / Art Director : White / Concept Artist : 0M_P
+© 2025 UNIVERSAL MUSIC LLC / 0M_P ALL RIGHTS RESERVED.
+初音ミク © Crypton Future Media, INC. www.piapro.net [https://nbcuni-music.com/deco27/assets/footer_credit-_Tgk5uBR.svg]
