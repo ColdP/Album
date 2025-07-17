@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0M_P 4th Album "TWO-SIDE VOCALS"</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Define base font families for different languages */
+        body {
+            font-family: 'Inter', 'Noto Sans SC', 'Noto Sans JP', sans-serif;
+            background-color: #f8faff; /* A very light blue-white */
+            color: #1f2937;
+        }
+        /* Custom styles for the header hover effect and transitions */
+        .header-bg {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .header-content {
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+        .heavy-drop-shadow {
+            filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.5));
+        }
+        .active-lang {
+            background-color: #3b82f6 !important;
+            color: white !important;
+        }
+        .modal {
+            display: none;
+        }
+        .modal.is-open {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="flex space-x-2 bg-white/50 backdrop-blur-sm p-1 rounded-full shadow-md">
+            <button id="lang-en" class="lang-switcher px-4 py-1.5 text-sm font-semibold text-gray-700 rounded-full transition-colors duration-300">EN</button>
+            <button id="lang-ja" class="lang-switcher px-4 py-1.5 text-sm font-semibold text-gray-700 rounded-full transition-colors duration-300">JA</button>
+            <button id="lang-zh" class="lang-switcher px-4 py-1.5 text-sm font-semibold text-gray-700 rounded-full transition-colors duration-300">CN</button>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header id="main-header" class="relative h-screen w-full overflow-hidden bg-white flex items-center justify-center">
+        <!-- Background Images -->
+        <div id="kv1" class="header-bg absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://album.0m-p.space/4th/TSV-KV1.png');"></div>
+        <div id="kv2" class="header-bg absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://album.0m-p.space/4th/TSV-KV2.png');"></div>
+        
+        <!-- Hover Zones -->
+        <div id="hover-left" class="absolute top-0 left-0 w-1/2 h-full z-10"></div>
+        <div id="hover-right" class="absolute top-0 right-0 w-1/2 h-full z-10"></div>
+
+        <!-- Content -->
+        <div id="header-content-wrapper" class="header-content relative z-20 flex flex-col items-center text-center px-4">
+            <img id="logo-light" src="https://album.0m-p.space/4th/TSV-Logo-LightBg.png" alt="TWO-SIDE VOCALS Logo" class="w-full max-w-lg md:max-w-xl lg:max-w-2xl transition-opacity duration-500" onerror="this.onerror=null;this.src='https://placehold.co/800x400/ffffff/cccccc?text=Logo+Not+Found';">
+            <img id="logo-dark" src="https://album.0m-p.space/4th/TSV-Logo.png" alt="TWO-SIDE VOCALS Logo Hover" class="w-full max-w-lg md:max-w-xl lg:max-w-2xl absolute top-0 left-1/2 -translate-x-1/2 opacity-0 heavy-drop-shadow transition-opacity duration-500" onerror="this.onerror=null;this.src='https://placehold.co/800x400/000000/ffffff?text=Logo+Not+Found';">
+            <p id="release-date" class="mt-4 text-xl md:text-2xl font-semibold text-gray-500 tracking-wider">2024.1.3 (Wed.) Release</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto space-y-20 md:space-y-28">
+
+            <!-- Editions Section -->
+            <section id="editions">
+                <h2 data-lang-key="editions_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">Editions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+                    <!-- Standard Edition -->
+                    <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://album.0m-p.space/4th/TSV-Cover1.png" alt="Standard Edition Cover" class="w-full rounded-2xl mb-6" onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/cccccc?text=Cover+1';">
+                        <h3 data-lang-key="standard_edition" class="text-2xl font-bold mb-2">Standard Edition</h3>
+                        <p class="text-gray-500 mb-4">1 DISC</p>
+                        <p class="text-gray-500 mb-4">UM0M-A004</p>
+                        <p data-lang-key="price_standard" class="text-xl font-semibold text-blue-500">2,399 JPY (in Tax)</p>
+                    </div>
+                    <!-- Limited Edition -->
+                    <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 md:mt-12">
+                        <img src="https://album.0m-p.space/4th/TSV-CoverL.png" alt="Limited Edition Cover" class="w-full rounded-2xl mb-6" onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/cccccc?text=Cover+L';">
+                        <h3 data-lang-key="limited_edition" class="text-2xl font-bold mb-2">Limited Edition</h3>
+                        <p class="text-gray-500 mb-4">2 DISC</p>
+                        <p class="text-gray-500 mb-4">UM0M-A005</p>
+                        <p data-lang-key="price_limited" class="text-xl font-semibold text-blue-500">3,999 JPY (in Tax)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tracklist Section -->
+            <section id="tracklist">
+                <h2 data-lang-key="tracklist_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">Track List</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
+                    <!-- DISC 1 -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-1">DISC.1 ONLY MYSELF</h3>
+                        <p class="text-gray-500 mb-6">(Vocal : 0M_P)</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li><strong>01 Past and Now</strong><br><span class="text-sm text-gray-500">Lyrics, Music : 0M_P / Arrangement : /World/Dream/</span></li>
+                            <li><strong>02 げんきがでるきょく</strong><br><span class="text-sm text-gray-500">Lyrics: 0M_P, DECO*27 / Music & Arrangement : 0M_P</span></li>
+                            <li><strong>03 あなたの笑顔</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>04 Type in</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>05 どうすれば優しくなれるかな</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>06 A Kiss for Your Melody</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>07 Clear Sky</strong><br><span class="text-sm text-gray-500">Lyrics: 0M_P, 湊あくあ / Music & Arrangement : 0M_P</span></li>
+                            <li><strong>08 もう泣かない</strong><br><span class="text-sm text-gray-500">Lyrics & Arrangement : 0M_P, 傘村トータ / Music : 0M_P</span></li>
+                            <li><strong>09 おはよー</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>10 ルーキーのソング</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>11 Sing Again (feat.初音ミク)</strong><br><span class="text-sm text-gray-500">Lyrics, Music & Arrangement : 0M_P</span></li>
+                        </ul>
+                    </div>
+                    <!-- DISC 2 -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-1">DISC.2 ANOTHER VOCALS</h3>
+                        <p data-lang-key="limited_only" class="text-gray-500 mb-6">Limited Edition Only</p>
+                         <ul class="space-y-4 text-gray-700">
+                            <li><strong>01 Past and Now</strong><br><span class="text-sm text-gray-500">Vocal : Ado / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>02 げんきがでるきょく</strong><br><span class="text-sm text-gray-500">Vocal : ano / Lyrics: 0M_P, DECO*27 / Music & Arrangement : 0M_P</span></li>
+                            <li><strong>03 あなたの笑顔</strong><br><span class="text-sm text-gray-500">Vocal : あいみょん / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>04 Type in</strong><br><span class="text-sm text-gray-500">Vocal : imase / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>05 どうすれば優しくなれるかな</strong><br><span class="text-sm text-gray-500">Vocal : 幾田りら / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>06 A Kiss for Your Melody</strong><br><span class="text-sm text-gray-500">Vocal : ROSÉ / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>07 Clear Sky</strong><br><span class="text-sm text-gray-500">Vocal : 湊あくあ / Lyrics: 0M_P, 湊あくあ / Music & Arrangement : 0M_P</span></li>
+                            <li><strong>08 もう泣かない</strong><br><span class="text-sm text-gray-500">Vocal : suis from ヨルシカ / Lyrics & Arrangement : 0M_P, 傘村トータ / Music : 0M_P</span></li>
+                            <li><strong>09 おはよー</strong><br><span class="text-sm text-gray-500">Vocal : 雨宮天 / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>10 ルーキーのソング</strong><br><span class="text-sm text-gray-500">Vocal : Leo/need x 初音ミク / Lyrics, Music & Arrangement : 0M_P</span></li>
+                            <li><strong>11 Sing Again (Piano Ver.)</strong><br><span class="text-sm text-gray-500">Vocal : 初音ミク / Lyrics, Music : 0M_P / Piano Arrangement : Yuse Totto</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Videos Section -->
+            <section id="videos" class="text-center">
+                <h2 data-lang-key="videos_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">Teaser & CrossFade</h2>
+                <div class="max-w-2xl mx-auto bg-white p-6 rounded-3xl shadow-lg">
+                    <img src="https://album.0m-p.space/4th/TSV-XFDCover.png" alt="Crossfade Video Cover" class="w-full rounded-2xl mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x450/eeeeee/cccccc?text=Video+Cover';">
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="https://0m-p.lnk.to/TSV-TV" target="_blank" data-lang-key="teaser_video" class="block w-full bg-blue-500 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-600 transition-colors duration-300">Teaser Video</a>
+                        <a href="https://0m-p.lnk.to/TSV-XFDV" target="_blank" data-lang-key="crossfade_video" class="block w-full bg-slate-200 text-slate-800 font-bold py-3 px-6 rounded-full hover:bg-slate-300 transition-colors duration-300">CrossFade Video</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Stream/Download Section -->
+            <section id="stream" class="text-center">
+                <h2 data-lang-key="stream_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">STREAM / DOWNLOAD</h2>
+                <div class="max-w-2xl mx-auto bg-white p-6 rounded-3xl shadow-lg">
+                    <img src="https://album.0m-p.space/4th/TSV-CoverDL.png" alt="Streaming Cover" class="w-full rounded-2xl mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x800/eeeeee/cccccc?text=Stream/DL+Cover';">
+                    <a href="https://0m-p.lnk.to/TSV" target="_blank" data-lang-key="stream_button" class="inline-block bg-blue-500 text-white font-bold py-4 px-10 rounded-full hover:bg-blue-600 transition-colors duration-300 text-lg">Streaming / DL</a>
+                </div>
+            </section>
+
+            <!-- Store Bonus Section -->
+            <section id="bonus">
+                <h2 data-lang-key="bonus_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">Store Bonus</h2>
+                <div class="space-y-6">
+                    <div class="bonus-item grid grid-cols-1 sm:grid-cols-4 gap-4 items-center bg-white p-4 rounded-2xl shadow-md">
+                        <img src="https://album.0m-p.space/4th/kz_CD.png" alt="0M_P Official Store Bonus" class="w-24 h-24 object-cover rounded-lg cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eeeeee/cccccc?text=Bonus';">
+                        <div class="sm:col-span-2">
+                            <h3 class="font-bold" data-lang-key="bonus1_store">0M_P Official Store</h3>
+                            <p class="text-gray-600 text-sm" data-lang-key="bonus1_item">Sing Again (kz Hopeful Remix) CD</p>
+                        </div>
+                        <a href="https://0m-p.official.ec/" target="_blank" data-lang-key="visit_store" class="bg-slate-100 text-center text-slate-700 font-semibold py-2 px-4 rounded-full hover:bg-slate-200 transition-colors duration-300">Visit Store</a>
+                    </div>
+                     <div class="bonus-item grid grid-cols-1 sm:grid-cols-4 gap-4 items-center bg-white p-4 rounded-2xl shadow-md">
+                        <img src="https://album.0m-p.space/4th/Tac_CD.png" alt="UNIVERSAL MUSIC STORE Bonus" class="w-24 h-24 object-cover rounded-lg cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eeeeee/cccccc?text=Bonus';">
+                        <div class="sm:col-span-2">
+                            <h3 class="font-bold" data-lang-key="bonus2_store">UNIVERSAL MUSIC STORE</h3>
+                            <p class="text-gray-600 text-sm" data-lang-key="bonus2_item">A Kiss for Your Melody (TAKU INOUE Shaking Remix) [Vo. 0M_P & ROSÉ] CD</p>
+                        </div>
+                        <a href="https://store.universal-music.co.jp/search?q=0M_P" target="_blank" data-lang-key="visit_store" class="bg-slate-100 text-center text-slate-700 font-semibold py-2 px-4 rounded-full hover:bg-slate-200 transition-colors duration-300">Visit Store</a>
+                    </div>
+                     <div class="bonus-item grid grid-cols-1 sm:grid-cols-4 gap-4 items-center bg-white p-4 rounded-2xl shadow-md">
+                        <img src="https://album.0m-p.space/4th/27TD_CD.png" alt="Tmall Bonus" class="w-24 h-24 object-cover rounded-lg cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eeeeee/cccccc?text=Bonus';">
+                        <div class="sm:col-span-2">
+                            <h3 class="font-bold" data-lang-key="bonus3_store">0M_P Tmall Flagship Store</h3>
+                            <p class="text-gray-600 text-sm" data-lang-key="bonus3_item">げんきがでるきょく (DECO*27 & TeddyLoid Kawaii Remix) [Vo. 0M_P & ano] CD</p>
+                        </div>
+                        <a href="https://www.tmall.com/" target="_blank" data-lang-key="visit_store" class="bg-slate-100 text-center text-slate-700 font-semibold py-2 px-4 rounded-full hover:bg-slate-200 transition-colors duration-300">Visit Store</a>
+                    </div>
+                     <div class="bonus-item grid grid-cols-1 sm:grid-cols-4 gap-4 items-center bg-white p-4 rounded-2xl shadow-md">
+                        <img src="https://album.0m-p.space/4th/RELEASE-POSTER.png" alt="amazon Bonus" class="w-24 h-24 object-cover rounded-lg cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eeeeee/cccccc?text=Bonus';">
+                        <div class="sm:col-span-2">
+                            <h3 class="font-bold">Amazon.co.jp</h3>
+                            <p class="text-gray-600 text-sm" data-lang-key="bonus4_item">Release Information Poster</p>
+                        </div>
+                        <a href="https://amazon.co.jp" target="_blank" data-lang-key="visit_store" class="bg-slate-100 text-center text-slate-700 font-semibold py-2 px-4 rounded-full hover:bg-slate-200 transition-colors duration-300">Visit Store</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <h2 data-lang-key="about_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">About 0M_P</h2>
+                <div class="bg-white rounded-3xl shadow-lg p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://links.0m-p.space/Avatar.png" alt="0M_P Avatar" class="w-32 h-32 rounded-full object-cover flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/128x128/eeeeee/cccccc?text=Avatar';">
+                    <div>
+                        <p data-lang-key="about_roles" class="text-lg font-semibold text-gray-800 mb-2">Sound Producer / Singer / VOCALOID Producer / Writer</p>
+                        <p data-lang-key="about_bio1" class="text-gray-600 mb-2">Started activities in 2017, VOCALOID songs are mainly sung by Hatsune Miku.</p>
+                        <p data-lang-key="about_bio2" class="text-gray-600 mb-4">Made a major debut from Polydor Records, a label under Universal Music in 2022, and is currently affiliated with Universal Music Japan.</p>
+                        <p class="text-gray-600"><b data-lang-key="about_works">Works:</b> "You Need", "natural love", "Drama of Play"</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- More Info Section -->
+            <section id="more-info">
+                 <h2 data-lang-key="more_info_title" class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-600">More from 0M_P</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 data-lang-key="concert_brands" class="text-xl font-bold mb-4">Concert Brands</h3>
+                        <ul class="space-y-2">
+                            <li><a href="https://vlive.0m-p.space" target="_blank" class="text-blue-500 hover:underline">0M_P Virtual Live "On-Site"</a></li>
+                            <li><a href="https://tour.0m-p.space" target="_blank" class="text-blue-500 hover:underline">0M_P WORLD TOUR</a></li>
+                            <li><a href="https://tour.0m-p.space/China/2025" target="_blank" class="text-blue-500 hover:underline" data-lang-key="china_tour">0M_P CHINA TOUR 2025 "今天的事情"</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 data-lang-key="upcoming_albums" class="text-xl font-bold mb-4">Upcoming Albums</h3>
+                        <ul class="space-y-2">
+                            <li><a href="https://album.0m-p.space/5th" target="_blank" class="text-blue-500 hover:underline">0M_P 5th Album "Two-Side Voices" <span class="text-gray-500 text-sm">2025.9.10 Release</span></a></li>
+                            <li><a href="https://album.0m-p.space/tour_25" target="_blank" class="text-blue-500 hover:underline">0M_P WORLD TOUR 2025 "FLOWERS" OFFICIAL ALBUM <span class="text-gray-500 text-sm">2025.7.16 Release</span></a></li>
+                        </ul>
+                    </div>
+                 </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto text-center text-sm">
+            <a href="https://www.universal-music.co.jp/" target="_blank" class="inline-block mb-8">
+                <img src="https://www.universalmusic.com/wp-content/themes/umgcore2/assets/img/logo.png" alt="Universal Music Group Logo" class="h-8" onerror="this.onerror=null;this.src='https://placehold.co/150x32/ffffff/cccccc?text=UMG';">
+            </a>
+            <p class="mb-6 text-gray-400">
+                Key Visual by 左<br>
+                Web Designed by AxM Production / Art Director : White / Concept Artist : 0M_P
+            </p>
+            <p class="mb-4">© 2025 UNIVERSAL MUSIC LLC / 0M_P / AxM Production ALL RIGHTS RESERVED.</p>
+            <div class="flex justify-center items-center space-x-4 mb-2">
+                <p>初音ミク © Crypton Future Media, INC. <a href="http://www.piapro.net" target="_blank" class="hover:underline">www.piapro.net</a></p>
+                <img src="https://nbcuni-music.com/deco27/assets/footer_credit-_Tgk5uBR.svg" alt="Piapro Logo" class="h-4" onerror="this.onerror=null;this.src='https://placehold.co/60x16/ffffff/cccccc?text=Piapro';">
+            </div>
+            <div class="flex justify-center items-center space-x-4">
+                <p>Leo/need © SEGA / © Colorful Palette Inc. / © Crypton Future Media, INC. <a href="http://www.piapro.net" target="_blank" class="hover:underline">www.piapro.net</a></p>
+                 <img src="https://album.0m-p.space/4th/piapro.svg" alt="Piapro Characters Logo" class="h-4" onerror="this.onerror=null;this.src='https://placehold.co/60x16/ffffff/cccccc?text=Piapro';">
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal fixed inset-0 bg-black bg-opacity-75 z-50 items-center justify-center p-4">
+        <div class="relative">
+            <button id="modal-close" class="absolute -top-4 -right-4 text-white text-4xl">&times;</button>
+            <img id="modal-image" src="" alt="Bonus Item Large View" class="max-w-full max-h-[80vh] rounded-lg">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Translation Data ---
+            const translations = {
+                // Titles
+                editions_title: { en: 'Editions', ja: 'バージョン', zh: '版本' },
+                tracklist_title: { en: 'Track List', ja: '収録曲', zh: '曲目列表' },
+                videos_title: { en: 'Teaser & CrossFade', ja: 'ティザー & クロスフェード', zh: '宣传影像' },
+                stream_title: { en: 'STREAM / DOWNLOAD', ja: 'ストリーミング / ダウンロード', zh: '在线收听 / 下载' },
+                bonus_title: { en: 'Store Bonus', ja: '店舗特典', zh: '店铺特典' },
+                about_title: { en: 'About 0M_P', ja: '0M_Pについて', zh: '关于 0M_P' },
+                more_info_title: { en: 'More from 0M_P', ja: '0M_Pの関連情報', zh: '0M_P 其他信息' },
+                // Editions
+                standard_edition: { en: 'Standard Edition', ja: '通常盤', zh: '通常盘' },
+                limited_edition: { en: 'Limited Edition', ja: '初回限定盤', zh: '初回限定盘' },
+                price_standard: { en: '19.9 USD (in Tax)', ja: '2,399円 (in Tax)', zh: '99 RMB' },
+                price_limited: { en: '29.9 USD (in Tax)', ja: '3,999円 (in Tax)', zh: '199 RMB' },
+                // Tracklist
+                limited_only: { en: 'Limited Edition Only', ja: '初回限定盤のみ', zh: '仅限初回限定盘' },
+                // Videos
+                teaser_video: { en: 'Teaser Video', ja: 'ティザー映像', zh: '预告视频' },
+                crossfade_video: { en: 'CrossFade Video', ja: 'クロスフェード動画', zh: '试听串烧' },
+                // Stream
+                stream_button: { en: 'Streaming / DL', ja: 'ストリーミング / DL', zh: '在线收听 / 下载' },
+                // Bonus
+                visit_store: { en: 'Visit Store', ja: 'ストアへ', zh: '访问商店' },
+                bonus1_store: { en: '0M_P Official Store', ja: '0M_P Official Store', zh: '0M_P 官方商店' },
+                bonus1_item: { en: 'Sing Again (kz Hopeful Remix) CD', ja: 'Sing Again (kz Hopeful Remix) CD', zh: 'Sing Again (kz Hopeful Remix) CD' },
+                bonus2_store: { en: 'UNIVERSAL MUSIC STORE', ja: 'UNIVERSAL MUSIC STORE', zh: 'UNIVERSAL MUSIC STORE' },
+                bonus2_item: { en: 'A Kiss for Your Melody (TAKU INOUE Shaking Remix) [Vo. 0M_P & ROSÉ] CD', ja: 'A Kiss for Your Melody (TAKU INOUE Shaking Remix) [Vo. 0M_P & ROSÉ] CD', zh: 'A Kiss for Your Melody (TAKU INOUE Shaking Remix) [Vo. 0M_P & ROSÉ] CD' },
+                bonus3_store: { en: '0M_P Tmall Flagship Store', ja: '0M_P 天猫旗艦店', zh: '0M_P 天猫旗舰店' },
+                bonus3_item: { en: 'げんきがでるきょく (DECO*27 & TeddyLoid Kawaii Remix) [Vo. 0M_P & ano] CD', ja: 'げんきがでるきょく (DECO*27 & TeddyLoid Kawaii Remix) [Vo. 0M_P & ano] CD', zh: 'げんきがでるきょく (DECO*27 & TeddyLoid Kawaii Remix) [Vo. 0M_P & ano] CD' },
+                bonus4_item: { en: 'Release Information Poster', ja: 'リリース情報ポスター', zh: '发售信息海报' },
+                // About
+                about_roles: { en: 'Sound Producer / Singer / VOCALOID Producer / Writer', ja: 'サウンドプロデューサー / 歌手 / VOCALOIDプロデューサー / 作家', zh: '音乐制作人 / 歌手 / VOCALOID P主 /作家' },
+                about_bio1: { en: 'Started activities in 2017, VOCALOID songs are mainly sung by Hatsune Miku.', ja: '2017年から活動開始、VOCALOID楽曲は主に初音ミクが歌唱。', zh: '2017年开始活动，VOCALOID歌曲主要由初音未来演唱。' },
+                about_bio2: { en: 'Made a major debut from Polydor Records, a label under Universal Music in 2022, and is currently affiliated with Universal Music Japan.', ja: '2022年、ユニバーサルミュージック傘下のPolydor Recordsからメジャーデビュー。現在、ユニバーサルミュージックジャパンに所属。', zh: '2022年从环球音乐旗下的Polydor Records主流出道，目前所属日本环球音乐旗下。' },
+                about_works: { en: 'Works:', ja: '作品:', zh: '作品：' },
+                // More Info
+                concert_brands: { en: 'Concert Brands', ja: 'コンサートブランド', zh: '演唱会品牌' },
+                china_tour: { en: '0M_P CHINA TOUR 2025 "Today\'s Matters"', ja: '0M_P CHINA TOUR 2025 "今天のこと"', zh: '0M_P CHINA TOUR 2025 "今天的事情"' },
+                upcoming_albums: { en: 'Upcoming Albums', ja: '今後のアルバム', zh: '即将发行的专辑' },
+            };
+            
+            // --- Language Switcher Logic ---
+            const langButtons = document.querySelectorAll('.lang-switcher');
+            let currentLang = 'ja'; // Default language
+
+            function switchLanguage(lang) {
+                if (!translations) return;
+                currentLang = lang;
+                
+                // Update text content
+                document.querySelectorAll('[data-lang-key]').forEach(el => {
+                    const key = el.getAttribute('data-lang-key');
+                    if (translations[key] && translations[key][lang]) {
+                        el.innerHTML = translations[key][lang];
+                    }
+                });
+
+                // Update language button styles
+                langButtons.forEach(btn => {
+                    btn.classList.remove('active-lang');
+                    if (btn.id === `lang-${lang}`) {
+                        btn.classList.add('active-lang');
+                    }
+                });
+                
+                // Update document language attribute
+                document.documentElement.lang = lang;
+            }
+
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const lang = button.id.replace('lang-', '');
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set initial language
+            switchLanguage(currentLang);
+
+            // --- Header Hover Effect ---
+            const header = document.getElementById('main-header');
+            const hoverLeft = document.getElementById('hover-left');
+            const hoverRight = document.getElementById('hover-right');
+            const kv1 = document.getElementById('kv1');
+            const kv2 = document.getElementById('kv2');
+            const contentWrapper = document.getElementById('header-content-wrapper');
+            const logoLight = document.getElementById('logo-light');
+            const logoDark = document.getElementById('logo-dark');
+
+            const activateHeader = (kvElement) => {
+                kv1.style.opacity = (kvElement === kv1) ? '1' : '0';
+                kv2.style.opacity = (kvElement === kv2) ? '1' : '0';
+                contentWrapper.style.transform = 'translateY(25%)';
+                logoLight.style.opacity = '0';
+                logoDark.style.opacity = '1';
+            };
+
+            const resetHeader = () => {
+                kv1.style.opacity = '0';
+                kv2.style.opacity = '0';
+                contentWrapper.style.transform = 'translateY(0)';
+                logoLight.style.opacity = '1';
+                logoDark.style.opacity = '0';
+            };
+
+            hoverLeft.addEventListener('mouseenter', () => activateHeader(kv1));
+            hoverRight.addEventListener('mouseenter', () => activateHeader(kv2));
+            header.addEventListener('mouseleave', resetHeader);
+
+            // --- Image Modal Logic ---
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalClose = document.getElementById('modal-close');
+            const bonusImages = document.querySelectorAll('.bonus-item img');
+
+            bonusImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modalImage.src = img.src;
+                    modal.classList.add('is-open');
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+            };
+
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
